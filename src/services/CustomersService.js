@@ -4,10 +4,12 @@ class CustomersService {
       {
         id: "1",
         name: "John Doe",
+        products: ["Item 1","Item 2"]
       },
       {
         id: "2",
         name: "Rambo",
+        products: ["Item 1","Item 22"]
       },
     ];
   }
@@ -25,7 +27,9 @@ class CustomersService {
   }
 
   addNewCustomer(customer) {
-    this.customers.concat(customer);
+    this.customers = [...this.customers, customer]
+
+    return customer
   }
 }
 
