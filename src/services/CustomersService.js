@@ -23,6 +23,10 @@ class CustomersService {
     this.customers = newList;
     return true;
   }
+
+  addNewCustomer(customer) {
+    this.customers.concat(customer);
+  }
 }
 
 export default new CustomersService();
