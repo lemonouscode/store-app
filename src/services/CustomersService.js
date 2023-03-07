@@ -18,6 +18,11 @@ class CustomersService {
     return this.customers;
   }
 
+  singleCustomer(id){
+    const customer = this.customers.find((e)=> e.id===id);
+    return customer
+  }
+
   delete(id) {
     const newList = this.customers.filter((e) => {
       return e.id !== id;

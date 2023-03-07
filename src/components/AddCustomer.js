@@ -1,20 +1,5 @@
-import { useState } from "react";
 
-const AddCustomer = ()=>{
-
-
-    const [newCustomer, setNewCustomer] = useState();
-
-    const handleCustomerName = (name) => {
-        setNewCustomer(name);
-    };
-
-    const handleAddCustomer = () => {
-        const id = Number(customers.length) + 1;
-        const newCust = { id, name: newCustomer };
-        setCustomers([...customers, newCust]);
-        CustomersService.addNewCustomer(newCust);
-    };
+const AddCustomer = ({handleCustomerName,handleAddCustomer})=>{
 
 
     return (

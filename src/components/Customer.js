@@ -1,20 +1,17 @@
-const Customer = ({name,id,customers,setCustomers})=>{
+import CustomerPage from "../pages/CustomerPage";
+import { Route } from "react-router-dom";
 
-    const handleDelete = (id) => {
-        const isDeleted = CustomersService.delete(id);
-        if (isDeleted) {
-            const deletedCustomers = customers.filter((e) => {
-            return e.id !== id;
-            });
-            setCustomers(deletedCustomers);
-        }
-    };
+const Customer = ({name,id,handleDelete})=>{
 
     return (
         <div>
             <h1>Name: {name}</h1>
             <h2>Id: {id}</h2>
             <button onClick={() => handleDelete(id)}>Delete</button>
+            <Route path="/customers/:id">
+                <CustomerPage id={id} />
+            </Route>
+            
         </div>
     )
 }
