@@ -4,10 +4,30 @@ import ListingProducts from "../components/ListingProducts";
 
 const AppProducts = () => {
 
-  const [products, setProducts] = useState(ProductService.getAll())
+  const [products] = useState(ProductService.getAll())
+  const [productName, setProductName] = useState();
+  const [foundProduct, setFoundProduct] = useState(products);
+  
+
+  const handleProductName = (name)=>{
+    setProductName(name); 
+  }
+
+  const handleShowProduct = ()=>{
+    const filtered = products.find((e)=>e.name == productName);
+    
+    if(filtered){
+      setFoundProduct(filtered);
+    }
+    else{
+      setFoundProduct(products)
+    }
+  }
+
+
 
   return (
-    <ListingProducts products={products} />
+    <ListingProducts products={products} handleProductName={handleProductName} handleShowProduct={handleShowProduct} foundProduct={foundProduct}/>
   )
 };
 

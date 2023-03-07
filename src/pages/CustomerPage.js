@@ -14,7 +14,7 @@ const CustomerPage = ()=>{
 
     const handleUserFetch = () => {
         setMyCustomer(CustomersService.singleCustomer(id));
-        if (!myCustomer) {
+        if (!myCustomer) { 
             history.push("/customers");
             return;
         }

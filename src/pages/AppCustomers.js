@@ -32,7 +32,7 @@ const AppCustomers = () => {
       CustomersService.addNewCustomer(newCust);
   };
 
-
+  
 
   return (
     <div>
