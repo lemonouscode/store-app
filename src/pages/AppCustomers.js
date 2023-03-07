@@ -2,7 +2,7 @@ import CustomersService from "../services/CustomersService";
 import { useState } from "react";
 import Customer from "../components/Customer";
 import AddCustomer from "../components/AddCustomer";
-import { Link,Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const AppCustomers = () => {
@@ -24,9 +24,10 @@ const AppCustomers = () => {
       setNewCustomer(name);
   };
 
+
   const handleAddCustomer = () => {
       const id = Number(customers.length) + 1;
-      const newCust = { id, name: newCustomer };
+      const newCust = { id, name: newCustomer, products:[]};
       setCustomers([...customers, newCust]);
       CustomersService.addNewCustomer(newCust);
   };

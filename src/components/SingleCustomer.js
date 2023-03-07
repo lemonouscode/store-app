@@ -1,7 +1,7 @@
 const SingleCustomer = ({myCustomer})=>{
     return (
         <div >
-            {myCustomer &&
+            {myCustomer.products ?
             <div>
                 <h1>Name: {myCustomer.name}</h1>
                 <h2>Id: {myCustomer.id}</h2>
@@ -11,10 +11,10 @@ const SingleCustomer = ({myCustomer})=>{
                     ))}
                 </div>
             </div>
+            :
+            <h1>Name: {myCustomer.name}</h1>
             }
-            <h1>{myCustomer.name}</h1>
         </div>
-        
     )
 }
 

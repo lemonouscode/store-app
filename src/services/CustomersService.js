@@ -19,7 +19,7 @@ class CustomersService {
   }
 
   singleCustomer(id){
-    const customer = this.customers.find((e)=> e.id===id);
+    const customer = this.customers.find((e)=> e.id==id);
     return customer
   }
 

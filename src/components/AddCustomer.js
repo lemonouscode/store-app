@@ -1,5 +1,5 @@
 
-const AddCustomer = ({handleCustomerName,handleAddCustomer})=>{
+const AddCustomer = ({handleCustomerName, handleAddCustomer})=>{
 
 
     return (

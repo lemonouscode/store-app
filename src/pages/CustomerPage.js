@@ -8,6 +8,9 @@ const CustomerPage = ()=>{
     const { id } = useParams();
     const history = useHistory();
     const [myCustomer, setMyCustomer] = useState(CustomersService.singleCustomer(id));
+    
+
+    console.log(CustomersService.singleCustomer(id));
 
     const handleUserFetch = () => {
         setMyCustomer(CustomersService.singleCustomer(id));
@@ -18,7 +21,6 @@ const CustomerPage = ()=>{
     };
 
 
-    // Ne radi "pretpostavljam" useEffect kad napravim novog customera pa zelim da prikazem njegov page
     useEffect(() => {
         handleUserFetch();
     },[id]);
