@@ -21,8 +21,32 @@ class ProductService {
     }
   
     singleProduct(id){
-      const customer = this.customers.find((e)=> e.id==id);
-      return customer
+      const product = this.products.find((e)=> e.id==id);
+      return product
+    }
+
+    incrementProduct(id){
+      const toPlus = this.products.map((e)=>{
+        if(e.id == id){
+          e.amount++;
+        }
+        return e;
+      })
+      this.products = toPlus;
+      return toPlus;
+    }
+
+    decrementProduct(id){
+      const toMinus = this.products.map((e)=>{
+        if(e.id == id){
+          if(e.amount > 0){
+            e.amount--;
+          }
+        }
+        return e;
+      })
+      this.products = toMinus;
+      return toMinus;
     }
   
   }

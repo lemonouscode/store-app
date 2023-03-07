@@ -25,25 +25,15 @@ const AppProducts = () => {
   }
 
   const handleDecreament = (id)=>{
-    const toMinus = products.map((e)=>{
-      if(e.id == id){
-        if(e.amount > 0){
-          e.amount--;
-        }
-      }
-      return e;
-    })
+    const toMinus = ProductService.decrementProduct(id);
+    
     setProducts(toMinus)
   }
 
   const handleIncrement = (id)=>{
-    const toMinus = products.map((e)=>{
-      if(e.id == id){
-        e.amount++;
-      }
-      return e;
-    })
-    setProducts(toMinus)
+    const toPlus = ProductService.incrementProduct(id);
+    
+    setProducts(toPlus)
   }
 
   return (

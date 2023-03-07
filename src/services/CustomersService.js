@@ -36,6 +36,15 @@ class CustomersService {
 
     return customer
   }
+
+  boughtNewItem(id,item){
+    this.customers.map((e)=>{
+      if(e.id == id){
+        e.products.push(item.name)
+      }
+    })
+    return true;
+  }
 }
 
 export default new CustomersService();
