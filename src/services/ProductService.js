@@ -4,12 +4,14 @@ class ProductService {
         {
           id: "1",
           name: "Product 1",
-          price: 333
+          price: 333,
+          amount: 12
         },
         {
           id: "2",
           name: "Product 2",
-          price: 355
+          price: 355,
+          amount: 12
         },
       ];
     }

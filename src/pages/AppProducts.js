@@ -4,7 +4,7 @@ import ListingProducts from "../components/ListingProducts";
 
 const AppProducts = () => {
 
-  const [products] = useState(ProductService.getAll())
+  const [products, setProducts] = useState(ProductService.getAll())
   const [productName, setProductName] = useState();
   const [foundProduct, setFoundProduct] = useState(products);
   
@@ -24,10 +24,37 @@ const AppProducts = () => {
     }
   }
 
+  const handleDecreament = (id)=>{
+    const toMinus = products.map((e)=>{
+      if(e.id == id){
+        if(e.amount > 0){
+          e.amount--;
+        }
+      }
+      return e;
+    })
+    setProducts(toMinus)
+  }
 
+  const handleIncrement = (id)=>{
+    const toMinus = products.map((e)=>{
+      if(e.id == id){
+        e.amount++;
+      }
+      return e;
+    })
+    setProducts(toMinus)
+  }
 
   return (
-    <ListingProducts products={products} handleProductName={handleProductName} handleShowProduct={handleShowProduct} foundProduct={foundProduct}/>
+    <ListingProducts 
+      products={products} 
+      handleProductName={handleProductName} 
+      handleShowProduct={handleShowProduct} 
+      foundProduct={foundProduct}
+      handleDecreament={handleDecreament}
+      handleIncrement={handleIncrement}
+      />
   )
 };
 
